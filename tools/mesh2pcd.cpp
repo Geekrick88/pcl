@@ -111,15 +111,15 @@ main (int argc, char **argv)
   {
     vtkSmartPointer<vtkPLYReader> readerQuery = vtkSmartPointer<vtkPLYReader>::New ();
     readerQuery->SetFileName (argv[ply_file_indices[0]]);
-    polydata1 = readerQuery->GetOutput ();
-    polydata1->Update ();
+    readerQuery->Update ();
+	polydata1 = readerQuery->GetOutput ();
   }
   else if (obj_file_indices.size () == 1)
   {
     vtkSmartPointer<vtkOBJReader> readerQuery = vtkSmartPointer<vtkOBJReader>::New ();
     readerQuery->SetFileName (argv[obj_file_indices[0]]);
-    polydata1 = readerQuery->GetOutput ();
-    polydata1->Update ();
+    readerQuery->Update ();
+	polydata1 = readerQuery->GetOutput ();
   }
 
   bool INTER_VIS = false;
